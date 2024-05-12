@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="transport.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport</title>
+</head>
+<body>
+    <body>
+        <form>
+            <h1>Create Transport</h1>
+            <p style="margin: 1px;">Input VIN</p>
+            <input type="text" id="vin">
+    
+            <p style="margin: 1px;">Input Lifting Capacity</p>
+            <input type="number" id="liftingCap">
+    
+            <p style="margin: 1px;">Input owner's email</p>
+            <input type="email" id="email">
+    
+            <p style="margin: 1px;">Choose brand</p>
+            <select style="display: block" id="brand">
+                <option value="0"></option>
+                <option value="1">Volvo</option>
+                <option value="2">Scania</option>
+                <option value="3">Man</option>
+                <option value="4">Kamaz</option>
+                <option value="5">Reno</option>
+                <option value="6">Foton</option>
+                <option value="7">Mercedes</option>
+                <option value="8">Ford</option>
+                <option value="9">Iveco</option>
+                <option value="10">Daf</option>
+            </select>
+    
+            <p style="margin: 1px;">Choose color</p>
+            <select style="display: block" id="color">
+                <option value="0"></option>
+                <option value="1">Orange</option>
+                <option value="2">Red</option>
+                <option value="3">Blue</option>
+                <option value="4">Yellow</option>
+                <option value="5">Pink</option>
+                <option value="6">Black</option>
+                <option value="7">White</option>
+                <option value="8">Purple</option>
+                <option value="9">Green</option>
+                <option value="10">Grey</option>
+            </select>
+    
+            <button style="margin-top: 10px;" id="create">Create</button>
+            
+    
+            <h1>Search Transport Info</h1>
+            <p style="margin: 1px;">Input owner's email</p>
+            <input type="email" id="searchEmail">
+    
+            <button style="margin-top: 10px;" id="find">Search</button>
+        </form>
+    
+        <table style="margin-top: 10px;">
+            <tr>
+                <td>VIN</td>
+                <td>Lifting Capacity</td>
+                <td>Owner's email</td>
+                <td>Brand</td>
+                <td>Color</td>
+            </tr>
+            <tr id="transports">
+            </tr>
+        </table>
+
+        <form>
+            <h1>Update Transport Info</h1>
+                <p style="margin: 1px;">Input VIN</p>
+                <input type="email" id="updateVin">
+    
+                <p style="margin: 1px;">Input new surname</p>
+                <input type="text" id="updateLiftingCap">
+    
+                <p style="margin: 1px;">Choose brand</p>
+            <select style="display: block" id="updateBrand">
+                <option value="0"></option>
+                <option value="1">Volvo</option>
+                <option value="2">Scania</option>
+                <option value="3">Man</option>
+                <option value="4">Kamaz</option>
+                <option value="5">Reno</option>
+                <option value="6">Foton</option>
+                <option value="7">Mercedes</option>
+                <option value="8">Ford</option>
+                <option value="9">Iveco</option>
+                <option value="10">Daf</option>
+            </select>
+    
+            <p style="margin: 1px;">Choose color</p>
+            <select style="display: block" id="updateColor">
+                <option value="0"></option>
+                <option value="1">Orange</option>
+                <option value="2">Red</option>
+                <option value="3">Blue</option>
+                <option value="4">Yellow</option>
+                <option value="5">Pink</option>
+                <option value="6">Black</option>
+                <option value="7">White</option>
+                <option value="8">Purple</option>
+                <option value="9">Green</option>
+                <option value="10">Grey</option>
+            </select>
+    
+                <button style="margin-top: 10px;" id="update">Update</button>
+    
+        </form>
+
+
+        <script src="transport.js"></script>
+</body>
+</html>
