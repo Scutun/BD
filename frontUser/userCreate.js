@@ -26,6 +26,10 @@ function createUser(event){
     } 
     newUser.second_name = document.getElementById('secondName').value
     newUser.role = document.getElementById('role').value
+    if (newUser.role === "0") {
+        console.log("Invalid name") 
+        return
+    } 
 
 
     fetch(`http://26.233.112.62:3000/api/user`, {

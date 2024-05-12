@@ -19,9 +19,6 @@ function findUser(event){
         const email = document.createElement('td')
         email.innerText = dt[0].email
 
-        const pass = document.createElement('td')
-        pass.innerText = dt[0].password
-
         const surname = document.createElement('td')
         surname.innerText = dt[0].surname
 
@@ -37,7 +34,6 @@ function findUser(event){
         while(userInfo.hasChildNodes()) userInfo.removeChild(userInfo.firstChild)
 
         userInfo.appendChild(email)
-        userInfo.appendChild(pass)
         userInfo.appendChild(surname)
         userInfo.appendChild(firstName)
         userInfo.appendChild(secondName)

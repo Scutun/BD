@@ -10,12 +10,16 @@ class userController {
     }
     async getUsers(req, res){
         const users = await db.query(`select * from userr`)
+        users.rows = users.rows.map(element => {
+            delete element.password
+            return element
+    })
 
         res.json(users.rows)
     }
     async getOneUser(req, res){ 
         const user = await db.query(`select * from userr where email = $1`, [req.params.email])
-
+        delete user.rows[0].password
         res.json(user.rows)
     }
     async updateUser(req, res){

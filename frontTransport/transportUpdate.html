@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="transport.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,17 +22,17 @@
     </div>
     
 
-    <form>
+    <form class="create">
         <h1>Update Transport Info</h1>
-            <p style="margin: 1px;">Input VIN</p>
+            <p>Input VIN</p>
             <input type="text" id="updateVin">
 
-            <p style="margin: 1px;">Input New Lifting Capacity (kg)</p>  
+            <p>Input New Lifting Capacity (kg)</p>  
             <input type="number" id="updateLiftingCap">
 
-            <p style="margin: 1px;">Choose New Brand</p>
+            <p>Choose New Brand</p>
         <select style="display: block" id="updateBrand">
-            <option value="0"></option>
+            <option disabled selected value="0">Select Brand</option>
             <option value="1">Volvo</option>
             <option value="2">Scania</option>
             <option value="3">Man</option>
@@ -42,9 +45,9 @@
             <option value="10">Daf</option>
         </select>
 
-        <p style="margin: 1px;">Choose New Color</p>
+        <p>Choose New Color</p>
         <select style="display: block" id="updateColor">
-            <option value="0"></option>
+            <option disabled selected value="0">Select Color</option>
             <option value="1">Orange</option>
             <option value="2">Red</option>
             <option value="3">Blue</option>

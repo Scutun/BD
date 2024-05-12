@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     <link href="transport.css" rel="stylesheet" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,20 +21,20 @@
         <a href="/frontTransport/transportDelete.html">Delete Transport</a>
     </div>
 
-    <form>
+    <form class="create">
         <h1>Create Transport</h1>
-        <p style="margin: 1px;">Input VIN</p>
+        <p>Input VIN</p>
         <input type="text" id="vin">
 
-        <p style="margin: 1px;">Input Lifting Capacity</p>
+        <p>Input Lifting Capacity</p>
         <input type="number" id="liftingCap">
 
-        <p style="margin: 1px;">Input owner's email</p>
+        <p>Input owner's email</p>
         <input type="email" id="email">
 
-        <p style="margin: 1px;">Choose brand</p>
+        <p>Choose brand</p>
         <select style="display: block" id="brand">
-            <option value="0"></option>
+            <option disabled selected value="0">Choose Brand</option>
             <option value="1">Volvo</option>
             <option value="2">Scania</option>
             <option value="3">Man</option>
@@ -44,9 +47,9 @@
             <option value="10">Daf</option>
         </select>
 
-        <p style="margin: 1px;">Choose color</p>
+        <p>Choose color</p>
         <select style="display: block" id="color">
-            <option value="0"></option>
+            <option disabled selected value="0">Choose Color</option>
             <option value="1">Orange</option>
             <option value="2">Red</option>
             <option value="3">Blue</option>

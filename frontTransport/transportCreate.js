@@ -29,7 +29,6 @@ function createTransport(event){
         console.log("Invalid color") 
         return
     } 
-    console.log(newTransport)
 
     fetch(`http://26.233.112.62:3000/api/transport`, {
         method: "POST",
