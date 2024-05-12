@@ -10,3 +10,10 @@ tr,td{
     border: 3px solid black;
     text-align: center;
 }
+
+.pages{
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+        width: 100%;
+    }

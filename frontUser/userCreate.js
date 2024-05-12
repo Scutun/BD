@@ -1,17 +1,17 @@
 //Create User
-function createTransport(event){
+function createUser(event){
     
     event.preventDefault()
 
     const newUser = {}
-    newUser.email = document.getElementById('vin').value
+    newUser.email = document.getElementById('email').value
     if (newUser.email === "") {
-        console.log("Invalid VIN") 
+        console.log("Invalid email") 
         return
     } 
-    newUser.password = document.getElementById('liftingCap').value
-    if (newUser.password === 0) {
-        console.log("Invalid Lifting Capacity") 
+    newUser.password = document.getElementById('pass').value
+    if (newUser.password === "") {
+        console.log("Invalid password") 
         return
     } 
     newUser.surname = document.getElementById('surname').value

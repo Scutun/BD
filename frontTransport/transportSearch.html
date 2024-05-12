@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="transport.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Transport Info</title>
+</head>
+<body>
+    <div class="pages">
+        <a href="/frontUser/userCreate.html">Create User</a>
+        <a href="/frontUser/userSearch.html">Find User Info</a>
+        <a href="/frontUser/userUpdate.html">Update User Info</a>
+        <a href="/frontUser/userDelete.html">Delete User</a>
+        <a href="/frontTransport/transportCreate.html">Create Transport</a>
+        <a href="/frontTransport/transportSearch.html">Find Transport Info</a>
+        <a href="/frontTransport/transportUpdate.html">Update Transport Info</a>
+        <a href="/frontTransport/transportDelete.html">Delete Transport</a>
+    </div>
+
+    
+        <h1>Search Transport Info</h1>
+        <p style="margin: 1px;">Input VIN</p>
+        <input type="email" id="searchVin">
+
+        <button style="margin-top: 10px;" id="find">Search</button>
+    </form>
+
+    <table style="margin-top: 10px;">
+        <tr>
+            <td>VIN</td>
+            <td>Lifting Capacity</td>
+            <td>Owner's email</td>
+            <td>Brand</td>
+            <td>Color</td>
+        </tr>
+        <tr id="transport">
+        </tr>
+
+    </table>
+
+
+    <h1>Find User's All Transports</h1>
+    <p style="margin: 1px;">Input owner's email</p>
+    <input type="email" id="searchEmail">
+
+    <button style="margin-top: 10px;" id="findAll">Search</button>
+</form>
+
+<table id="transports" style="margin-top: 10px;">
+    <tr>
+        <td>VIN</td>
+        <td>Lifting Capacity</td>
+        <td>Owner's email</td>
+        <td>Brand</td>
+        <td>Color</td>
+    </tr>
+
+</table>
+
+
+    
+        <h1>Count Transport Amount</h1>
+        <p style="margin: 1px;">Input owner's email</p>
+        <input type="email" id="amountEmail">
+
+        <button style="margin-top: 10px;" id="count">Count</button>
+    </form>
+
+    <table style="margin-top: 10px;">
+        <tr>
+            <td>EMail</td>
+            <td>Amount of Transport</td>
+        </tr>
+        <tr id="amount">
+        </tr>
+    </table>
+
+
+    <script src="transportSearch.js"></script>
+</body>
+</html>

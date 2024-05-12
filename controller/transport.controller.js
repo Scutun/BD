@@ -17,8 +17,17 @@ class transportController {
 
         res.json(transports.rows)
     }
+    async getOneTransport(req, res){ 
+        const transport = await db.query(`SELECT fk_email AS email, lifting_capacity, transport_number AS VIN,
+        brand.brand_name AS brand, color.color_name AS color FROM transport
+        JOIN brand ON transport.fk_brand_id = brand.brand_id
+        JOIN color ON transport.fk_color_id = color.color_id
+        WHERE transport.transport_number = $1`, [req.params.email])
+
+        res.json(transport.rows)
+    }
     async updateTransport(req, res){
-        const {vin, lifting_capacity, email, brand, color} = req.body
+        const {vin, lifting_capacity, brand, color} = req.body
         const user =  await db.query(`update transport set
         lifting_capacity = $1, fk_brand_id = $2, fk_color_id = $3
         where transport_number = $4 returning *`, [lifting_capacity, brand, color, vin])
@@ -32,8 +41,8 @@ class transportController {
     }
 
     //Аналитический запрос для поиска автомобиля по email владельца/водителя
-    async getOneTransport(req, res){ 
-        const transport = await db.query(`SELECT transport_number AS VIN, lifting_capacity, fk_email AS email,
+    async getAllTransports(req, res){ 
+        const transport = await db.query(`SELECT fk_email AS email, lifting_capacity, transport_number AS VIN,
         brand.brand_name AS brand, color.color_name AS color FROM transport
         JOIN brand ON transport.fk_brand_id = brand.brand_id
         JOIN color ON transport.fk_color_id = color.color_id

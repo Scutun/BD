@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="user.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find User Info</title>
+</head>
+<body>
+    <div class="pages">
+        <a href="/frontUser/userCreate.html">Create User</a>
+        <a href="/frontUser/userSearch.html">Find User Info</a>
+        <a href="/frontUser/userUpdate.html">Update User Info</a>
+        <a href="/frontUser/userDelete.html">Delete User</a>
+        <a href="/frontTransport/transportCreate.html">Create Transport</a>
+        <a href="/frontTransport/transportSearch.html">Find Transport Info</a>
+        <a href="/frontTransport/transportUpdate.html">Update Transport Info</a>
+        <a href="/frontTransport/transportDelete.html">Delete Transport</a>
+    </div>
+    
+    <form>
+        <h1>Search User Info</h1>
+        <p style="margin: 1px;">Input email</p>
+        <input type="email" id="searchEmail">
+
+        <button style="margin-top: 10px;" id="find">Search</button>
+    </form>
+
+    <table style="margin-top: 10px;">
+        <tr>
+            <td>Email</td>
+            <td>Password</td>
+            <td>Surname</td>
+            <td>First name</td>
+            <td>Second Name</td>
+            <td>Role</td>
+        </tr>
+        <tr id="users">
+        </tr>
+    </table>
+
+    <script src="userSearch.js">
+
+    </script>
+</body>
+</html>

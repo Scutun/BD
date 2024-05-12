@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="transport.css" rel="stylesheet" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Update Transport Info</title>
+</head>
+<body>
+    <div class="pages">
+        <a href="/frontUser/userCreate.html">Create User</a>
+        <a href="/frontUser/userSearch.html">Find User Info</a>
+        <a href="/frontUser/userUpdate.html">Update User Info</a>
+        <a href="/frontUser/userDelete.html">Delete User</a>
+        <a href="/frontTransport/transportCreate.html">Create Transport</a>
+        <a href="/frontTransport/transportSearch.html">Find Transport Info</a>
+        <a href="/frontTransport/transportUpdate.html">Update Transport Info</a>
+        <a href="/frontTransport/transportDelete.html">Delete Transport</a>
+    </div>
+    
+
+    <form>
+        <h1>Update Transport Info</h1>
+            <p style="margin: 1px;">Input VIN</p>
+            <input type="text" id="updateVin">
+
+            <p style="margin: 1px;">Input New Lifting Capacity (kg)</p>  
+            <input type="number" id="updateLiftingCap">
+
+            <p style="margin: 1px;">Choose New Brand</p>
+        <select style="display: block" id="updateBrand">
+            <option value="0"></option>
+            <option value="1">Volvo</option>
+            <option value="2">Scania</option>
+            <option value="3">Man</option>
+            <option value="4">Kamaz</option>
+            <option value="5">Reno</option>
+            <option value="6">Foton</option>
+            <option value="7">Mercedes</option>
+            <option value="8">Ford</option>
+            <option value="9">Iveco</option>
+            <option value="10">Daf</option>
+        </select>
+
+        <p style="margin: 1px;">Choose New Color</p>
+        <select style="display: block" id="updateColor">
+            <option value="0"></option>
+            <option value="1">Orange</option>
+            <option value="2">Red</option>
+            <option value="3">Blue</option>
+            <option value="4">Yellow</option>
+            <option value="5">Pink</option>
+            <option value="6">Black</option>
+            <option value="7">White</option>
+            <option value="8">Purple</option>
+            <option value="9">Green</option>
+            <option value="10">Grey</option>
+        </select>
+
+            <button style="margin-top: 10px;" id="update">Update</button>
+
+    </form>
+
+
+    <script src="transportUpdate.js"></script>
+
+</body>
+</html>
