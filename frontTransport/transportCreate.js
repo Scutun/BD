@@ -5,28 +5,44 @@ function createTransport(event){
 
     const newTransport = {}
     newTransport.vin = document.getElementById('vin').value
+    
+    while(document.getElementsByClassName("warning").length !== 0){
+        document.getElementsByClassName("warning")[0].remove()
+    }
+
     if (newTransport.vin === "") {
-        console.log("Invalid VIN") 
-        return
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid VIN"
+        document.getElementById("vin").after(par)
     } 
     newTransport.lifting_capacity = document.getElementById('liftingCap').value
-    if (newTransport.lifting_capacity === "0") {
-        console.log("Invalid Lifting Capacity") 
-        return
+    if (newTransport.lifting_capacity === "") {
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid Lifting Capacity"
+        document.getElementById("liftingCap").after(par)
     } 
     newTransport.email = document.getElementById('email').value
     if (newTransport.email === "") {
-        console.log("Invalid email") 
-        return
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid EMail"
+        document.getElementById("email").after(par)
     } 
     newTransport.brand = document.getElementById('brand').value
     if (newTransport.brand === "0") {
-        console.log("Invalid brand") 
-        return
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid Brand"
+        document.getElementById("brand").after(par)
     } 
     newTransport.color = document.getElementById('color').value
     if (newTransport.color === "0") {
-        console.log("Invalid color") 
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid Color"
+        document.getElementById("color").after(par)
         return
     } 
 

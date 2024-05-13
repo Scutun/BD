@@ -14,6 +14,8 @@ function deleteUser(event){
     .then(data => data.json())
     .then(clearData => console.log(clearData))
 
+
+
 }
 
 const deleteBut = document.getElementById('delete')

@@ -5,24 +5,38 @@ function updateTransport(event){
 
     const updatedTransport = {}
     updatedTransport.vin = document.getElementById('updateVin').value
+    
+    while(document.getElementsByClassName("warning").length !== 0){
+        document.getElementsByClassName("warning")[0].remove()
+    }
+
     if (updatedTransport.vin === "") {
-        console.log("Invalid VIN") 
-        return
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid VIN"
+        document.getElementById("updateVin").after(par)
     }
     
     updatedTransport.lifting_capacity = document.getElementById('updateLiftingCap').value
-    if (updatedTransport.lifting_capacity === "") {
-        console.log("Invalid lifting capacity") 
-        return
+    if (updatedTransport.lifting_capacity === "" && updatedTransport.vin !== "") {
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid Lifting Capacity"
+        document.getElementById("updateLiftingCap").after(par)
     } 
     updatedTransport.brand = document.getElementById('updateBrand').value
-    if (updatedTransport.brand === "0") {
-        console.log("Invalid brand") 
-        return
+    if (updatedTransport.brand === "0" && updatedTransport.vin !== "") {
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid Brand"
+        document.getElementById("updateBrand").after(par)
     } 
     updatedTransport.color = document.getElementById('updateColor').value
-    if (updatedTransport.color === "0") {
-        console.log("Invalid color") 
+    if (updatedTransport.color === "0" && updatedTransport.vin !== "") {
+        const par = document.createElement("p")
+        par.className = "warning"
+        par.innerText = "Invalid Color"
+        document.getElementById("updateColor").after(par)
         return
     } 
 

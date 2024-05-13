@@ -105,3 +105,8 @@ a:hover{
     background-color: black;
     color: white;   
 }
+
+.warning{
+    color: red;
+    font-size: 12px;
+}
