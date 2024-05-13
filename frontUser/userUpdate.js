@@ -43,7 +43,13 @@ function updateUser(event){
         }
     })
     .then(data => data.json())
-    .then(clearData => console.log(clearData))
+    .then(clearData => {
+        console.log(clearData)
+        document.getElementById('updateEmail').value = ""
+        document.getElementById('updateSurname').value = ""
+        document.getElementById('updateFirstName').value = ""
+        document.getElementById('updateSecondName').value = ""
+    })
 }
 
 const updateBut = document.getElementById('update')

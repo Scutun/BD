@@ -4,10 +4,18 @@ class transportController {
 
     async createTransport(req, res){
         const {vin, lifting_capacity, email, brand, color} = req.body
+        try{
         const newTransport = await db.query(`insert into transport (transport_number, lifting_capacity, fk_email, fk_brand_id, 
         fk_color_id) values ($1, $2, $3, $4, $5) returning *`, [vin, lifting_capacity, email, brand, color])
 
         res.json(newTransport.rows[0])
+        }
+        catch(e){
+            if(e.code === "23505") {
+                res.status(400)
+                res.json(e.code)
+            }
+        }
     }
     async getTransports(req, res){
         const transports = await db.query(`SELECT transport_number AS VIN, lifting_capacity, fk_email AS email,

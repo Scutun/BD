@@ -3,15 +3,22 @@ function findTransport(event){
 
     event.preventDefault()
 
+    while(document.getElementsByClassName("warning").length !== 0){
+        document.getElementsByClassName("warning")[0].remove()
+    }
+
     const inp = document.getElementById('searchVin')
     const data = inp.value
-    fetch(`http://26.233.112.62:3000/api/transport/${data}`)
+    fetch(`http://26.233.112.62:3000/api/transport/one/${data}`)
     .then(data => data.json())
     .then(dt => {
 
         if(dt.length === 0){
-            console.log("Transport not found")
-            return
+            const par = document.createElement("p")
+            par.className = "warning"
+            par.innerText = "Transport not found"
+            document.getElementById("searchVin").after(par)
+            return 
         }
 
         const transportInfo = document.getElementById('transport')
@@ -56,8 +63,11 @@ function findAllTransports(event){
     .then(dt => {
 
         if(dt.length === 0){
-            console.log("Transport not found")
-            return
+            const par = document.createElement("p")
+            par.className = "warning"
+            par.innerText = "Transport not found"
+            document.getElementById("searchEmail").after(par)
+            return 
         }
 
         const transportInfo = document.getElementById('transports')
@@ -112,7 +122,10 @@ function amountTransport(event){
     .then(dt => {
 
         if(dt.length === 0){
-            console.log("Transport not found")
+            const par = document.createElement("p")
+            par.className = "warning"
+            par.innerText = "Transport not found"
+            document.getElementById("amountEmail").after(par)
             return
         }
         const transportAmount = document.getElementById('amount')

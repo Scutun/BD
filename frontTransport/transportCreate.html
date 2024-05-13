@@ -21,19 +21,19 @@
         <a href="/frontTransport/transportDelete.html">Delete Transport</a>
     </div>
 
-    <form class="create">
+    <form class="create" id="form">
         <h1>Create Transport</h1>
         <p>Input VIN</p>
-        <input type="text" id="vin">
+        <input type="text" id="vin" autocomplete="off">
 
         <p>Input Lifting Capacity</p>
-        <input type="number" id="liftingCap">
+        <input type="number" id="liftingCap" autocomplete="off">
 
         <p>Input owner's email</p>
-        <input type="email" id="email">
+        <input type="email" id="email" autocomplete="off">
 
         <p>Choose brand</p>
-        <select style="display: block" id="brand">
+        <select style="display: block" id="brand" autocomplete="off">
             <option disabled selected value="0">Choose Brand</option>
             <option value="1">Volvo</option>
             <option value="2">Scania</option>
@@ -48,7 +48,7 @@
         </select>
 
         <p>Choose color</p>
-        <select style="display: block" id="color">
+        <select style="display: block" id="color" autocomplete="off">
             <option disabled selected value="0">Choose Color</option>
             <option value="1">Orange</option>
             <option value="2">Red</option>

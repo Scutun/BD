@@ -58,8 +58,24 @@ function createUser(event){
             'Content-Type': 'application/json'
         }
     })
-    .then(data => data.json())
-    .then(clearData => console.log(clearData))
+    .then(data => {
+        if(data.status === 400){
+            const p = document.createElement("p")
+            p.className = "warning"
+            p.innerText = "User with this email already exist"
+            document.getElementsByTagName("form")[0].appendChild(p)
+        }
+        return data.json()
+    })
+    .then(clearData => {
+        // console.log(clearData)
+        document.getElementById('email').value = ""
+        document.getElementById('pass').value = ""
+        document.getElementById('surname').value = ""
+        document.getElementById('firstName').value = ""
+        document.getElementById('secondName').value = ""
+        document.getElementById('role').value = "0"
+    })
 }
 
 const createBut = document.getElementById('create')

@@ -5,7 +5,7 @@ const transportController = require('../controller/transport.controller')
 
 router.post('/transport', transportController.createTransport)
 router.get('/transport', transportController.getTransports)
-router.get('/transport/:email', transportController.getOneTransport)
+router.get('/transport/one/:email', transportController.getOneTransport)
 router.put('/transport', transportController.updateTransport)
 router.delete('/transport/:transport_number', transportController.deleteTransport)
 //Аналитический запрос для отображения кол-ва всех т/с зарегистрированнных на email владельца/водителя

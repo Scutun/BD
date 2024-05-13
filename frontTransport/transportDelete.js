@@ -12,7 +12,10 @@ function deleteTransport(event){
         }
     })
     .then(data => data.json())
-    .then(clearData => console.log(clearData))
+    .then(clearData => {
+        console.log(clearData)
+        document.getElementById('deleteVin').value = ""
+    })
 
 }
 

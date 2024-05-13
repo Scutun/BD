@@ -17,7 +17,7 @@ function createTransport(event){
         document.getElementById("vin").after(par)
     } 
     newTransport.lifting_capacity = document.getElementById('liftingCap').value
-    if (newTransport.lifting_capacity === "") {
+    if (newTransport.lifting_capacity === "" || newTransport.lifting_capacity <= 0) {
         const par = document.createElement("p")
         par.className = "warning"
         par.innerText = "Invalid Lifting Capacity"
@@ -53,8 +53,23 @@ function createTransport(event){
             'Content-Type': 'application/json'
         }
     })
-    .then(data => data.json())
-    .then(clearData => console.log(clearData))
+    .then(data => {
+        if(data.status === 400){
+            const p = document.createElement("p")
+            p.className = "warning"
+            p.innerText = "Transport with this VIN already exist"
+            document.getElementsByTagName("form")[0].appendChild(p)
+        }
+        return data.json()
+    })
+    .then(clearData => {
+        //console.log(clearData)
+        document.getElementById('vin').value = ""
+        document.getElementById('liftingCap').value = ""
+        document.getElementById('email').value = ""
+        document.getElementById('brand').value = "0"
+        document.getElementById('color').value = "0"
+    })
 }
 
 const createBut = document.getElementById('create')

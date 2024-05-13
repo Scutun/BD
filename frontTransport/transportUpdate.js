@@ -18,7 +18,7 @@ function updateTransport(event){
     }
     
     updatedTransport.lifting_capacity = document.getElementById('updateLiftingCap').value
-    if (updatedTransport.lifting_capacity === "" && updatedTransport.vin !== "") {
+    if ((updatedTransport.lifting_capacity === "" || updatedTransport.lifting_capacity <= 0) && updatedTransport.vin !== "") {
         const par = document.createElement("p")
         par.className = "warning"
         par.innerText = "Invalid Lifting Capacity"
@@ -48,7 +48,13 @@ function updateTransport(event){
         }
     })
     .then(data => data.json())
-    .then(clearData => console.log(clearData))
+    .then(clearData => {
+        console.log(clearData)
+        document.getElementById('updateVin').value = ""
+        document.getElementById('updateLiftingCap').value = ""
+        document.getElementById('updateBrand').value = "0"
+        document.getElementById('updateColor').value = "0"
+    })
 }
 
 const updateBut = document.getElementById('update')

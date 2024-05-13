@@ -1,12 +1,24 @@
 const db = require('../db')
+const bcrypt = require('bcrypt')
 
 class userController {
     async createUser(req, res){
         const {email, password, surname, first_name, second_name, role} = req.body
+        const hash = bcrypt.hashSync(password, bcrypt.genSaltSync(10))
+        
+        try {
         const newPerson = await db.query(`insert into userr (email, password, surname, first_name, second_name, role) 
-        values ($1, $2, $3, $4, $5, $6) returning *`, [email, password, surname, first_name, second_name, role])
+        values ($1, $2, $3, $4, $5, $6) returning *`, [email, hash, surname, first_name, second_name, role])
 
         res.json(newPerson.rows[0])
+        }
+        catch(e){
+            if(e.code === "23505") {
+                res.status(400)
+                res.json(e.code)
+            }
+        }
+
     }
     async getUsers(req, res){
         const users = await db.query(`select * from userr`)
@@ -18,8 +30,9 @@ class userController {
         res.json(users.rows)
     }
     async getOneUser(req, res){ 
-        const user = await db.query(`select * from userr where email = $1`, [req.params.email])
-        delete user.rows[0].password
+        const user = await db.query(`select email, surname, first_name, 
+        second_name, role from userr where email = $1`, [req.params.email])
+        //delete user.rows[0].password
         res.json(user.rows)
     }
     async updateUser(req, res){
